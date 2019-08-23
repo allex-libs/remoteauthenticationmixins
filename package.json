@@ -1,0 +1,26 @@
+{
+  "name": "allex_remoteauthenticationmixinslib",
+  "version": "1.0.0",
+  "description": "Mixins for a Remote Authentication Strategy user",
+  "main": "index.js",
+  "scripts": {
+    "test": "allex-mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:allex-libs/remoteauthenticationmixins.git"
+  },
+  "keywords": [
+    "ecosystem:AllexJS",
+    "remote",
+    "authentication",
+    "mixins",
+    "lib"
+  ],
+  "author": "Andrija Petrovic <andrija.hers@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allex-libs/remoteauthenticationmixins/issues"
+  },
+  "homepage": "https://github.com/allex-libs/remoteauthenticationmixins#readme"
+}
