@@ -1,6 +1,6 @@
 {
   "name": "allex_remoteauthenticationmixinslib",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Mixins for a Remote Authentication Strategy user",
   "main": "index.js",
   "scripts": {

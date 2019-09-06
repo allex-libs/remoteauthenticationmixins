@@ -56,7 +56,7 @@ function createRemoteStrategyServiceMixin (execlib) {
     qlib.promise2defer(remoteauthsink.call('fetchUser', {username: username}), defer);
   });
   RemoteStrategyServiceMixin.prototype.forceRemotePasswordOnRemoteSink = execSuite.dependentServiceMethod([], ['remoteauth'], function (remoteauthsink, username, password, defer) {
-    qlib.promise2defer(remoteauthsink.call('forceRemotePassword', username, password), defer);
+    qlib.promise2defer(remoteauthsink.call('forcePassword', username, password), defer);
   });
 
   function onRemoteDBSink (rsm, remotedbsink) {
