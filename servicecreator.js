@@ -33,11 +33,11 @@ function createRemoteStrategyServiceMixin (execlib) {
     }
     return this.checkUsernameExistenceOnRemoteSink(username);
   };
-  RemoteStrategyServiceMixin.prototype.fetchRemoteUser = function (username) {
+  RemoteStrategyServiceMixin.prototype.fetchRemoteUser = function (userhash) {
     if (!this.remoteAuthenticationActive) {
       return q(null);
     }
-    return this.fetchRemoteUserOnRemoteSink(username);
+    return this.fetchRemoteUserOnRemoteSink(userhash);
   };
   RemoteStrategyServiceMixin.prototype.forceRemotePassword = function (username, password) {
     if (!this.remoteAuthenticationActive) {
@@ -52,8 +52,8 @@ function createRemoteStrategyServiceMixin (execlib) {
   RemoteStrategyServiceMixin.prototype.checkUsernameExistenceOnRemoteSink = execSuite.dependentServiceMethod([], ['remoteauth'], function (remoteauthsink, username, defer) {
     qlib.promise2defer(remoteauthsink.call('usernameExists', username), defer);
   });
-  RemoteStrategyServiceMixin.prototype.fetchRemoteUserOnRemoteSink = execSuite.dependentServiceMethod([], ['remoteauth'], function (remoteauthsink, username, defer) {
-    qlib.promise2defer(remoteauthsink.call('fetchUser', {username: username}), defer);
+  RemoteStrategyServiceMixin.prototype.fetchRemoteUserOnRemoteSink = execSuite.dependentServiceMethod([], ['remoteauth'], function (remoteauthsink, userhash, defer) {
+    qlib.promise2defer(remoteauthsink.call('fetchUser', userhash), defer);
   });
   RemoteStrategyServiceMixin.prototype.forceRemotePasswordOnRemoteSink = execSuite.dependentServiceMethod([], ['remoteauth'], function (remoteauthsink, username, password, defer) {
     qlib.promise2defer(remoteauthsink.call('forcePassword', username, password), defer);
